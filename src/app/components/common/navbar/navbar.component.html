@@ -1,0 +1,9 @@
+<section class="navbar">
+  <ul>
+    @for (route of allroutes; track route.path) {
+    <li>
+      <a routerLink="{{ route.path }}">{{ route.title }}</a>
+    </li>
+    }
+  </ul>
+</section>

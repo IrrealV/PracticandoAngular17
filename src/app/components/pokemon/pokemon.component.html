@@ -1,0 +1,17 @@
+@defer(on viewport){
+<section>
+  <div class="pokemon-card">
+    <div class="pokemon-header">
+      <h2 class="pokemon-name">{{ capFirstLetter(pokemonInfo.name) }}</h2>
+    </div>
+    <img
+      src="{{ urlImagenes }}"
+      alt="{{ capFirstLetter(pokemonInfo.name) }}"
+      class="pokemon-image"
+    />
+  </div>
+</section>
+
+}@placeholder {
+<p>Cargando pokemon</p>
+}

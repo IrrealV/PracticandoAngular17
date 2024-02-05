@@ -1,0 +1,23 @@
+.navbar {
+  @apply bg-background-200 shadow-xl ;
+}
+
+.navbar ul {
+  @apply flex justify-end;
+}
+
+.navbar ul li {
+  @apply w-48 my-4 text-center;
+}
+
+.navbar ul li a {
+  @apply px-5 py-3 rounded;
+}
+
+.navbar ul li:first-child {
+  @apply mr-auto;
+}
+
+.navbar ul li a:hover {
+  @apply bg-background-300;
+}

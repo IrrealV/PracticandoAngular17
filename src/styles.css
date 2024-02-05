@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background-100 text-white;
+}
+
+/* Personalizar toda la barra de desplazamiento */
+::-webkit-scrollbar {
+  @apply w-4;
+}
+
+/* Personalizar el track (parte donde se desliza el thumb) */
+::-webkit-scrollbar-track {
+  @apply bg-background-400 /* Color de fondo del track */;
+}
+
+/* Personalizar el thumb (parte que se mueve) */
+::-webkit-scrollbar-thumb {
+  @apply bg-background-300  rounded-2xl h-11/* Color de fondo del thumb */;
+}
+
+/* Cambio de color al pasar el mouse */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-background-200 /* Color de fondo del thumb al pasar el mouse */;
+}
