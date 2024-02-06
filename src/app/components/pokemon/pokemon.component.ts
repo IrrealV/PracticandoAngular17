@@ -11,7 +11,7 @@ import { environment } from '../../../environments/environment.development';
 })
 export class PokemonComponent implements OnInit {
   @Input() pokemonInfo!: Pokemon;
-  urlImagenes: string = environment.officialArtwork;
+  urlImagenes: string = environment.pokemonOfficialArtwork;
 
   ngOnInit(): void {
     const identificador: string | null = this.urlNumber(

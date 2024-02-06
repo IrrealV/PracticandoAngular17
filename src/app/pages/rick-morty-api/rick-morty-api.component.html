@@ -1,5 +1,9 @@
-@defer (on viewport) {
-<p>Funciona la pagina</p>
-}@placeholder {
+@defer (on viewport) { @for (persj of rickmortyList; track persj.id) {
+<p>{{ persj.name }}</p>
+} @if (this.nextUrl) {
+<button (click)="nextPage()">Siguiente pagina</button>
+} @if (this.prevUrl) {
+<button (click)="prevPage()">Pagina anterior</button>
+} }@placeholder {
 <section>Descargando personajes...</section>
 }

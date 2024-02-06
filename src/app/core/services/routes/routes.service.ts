@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Allroutes } from '../../../interfaces/allroutes';
+import { Allroutes } from '../../../interfaces/nav-routes';
 import { TodoListComponent } from '../../../pages/todo-list/todo-list.component';
 import { RickMortyAPIComponent } from '../../../pages/rick-morty-api/rick-morty-api.component';
 import { TheCatAPIComponent } from '../../../pages/the-cat-api/the-cat-api.component';

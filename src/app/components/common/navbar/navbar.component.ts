@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 
-import { Allroutes } from '../../../interfaces/allroutes';
+import { Allroutes } from '../../../interfaces/nav-routes';
 import { RouterLink } from '@angular/router';
 import { RoutesService } from '../../../core/services/routes/routes.service';
 

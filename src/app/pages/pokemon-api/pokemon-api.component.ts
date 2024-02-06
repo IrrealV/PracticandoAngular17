@@ -18,16 +18,16 @@ export class PokemonApiComponent implements OnInit {
   public pokemonList: Pokemon[] = [];
   public errorMessage!: string;
   private nextUrl?: string;
-  private subscriptions = new Subscription();
+  private subscriptionsPokemon = new Subscription();
 
   constructor(private service: PokemonService) {}
 
   ngOnInit(): void {
-    this.loadPokemon(environment.apiUrlBase); // Recibe la url desde el envionment
+    this.loadPokemon(environment.pokemonApiUrlBase); // Recibe la url desde el envionment
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.unsubscribe(); // Se desubscribe para evitar fuga en la memoria
+    this.subscriptionsPokemon.unsubscribe(); // Se desubscribe para evitar fuga en la memoria
   }
 
   loadPokemon(url: string): void {
@@ -45,7 +45,7 @@ export class PokemonApiComponent implements OnInit {
       )
       .subscribe();
 
-    this.subscriptions.add(subscription); // Agrega la suscripción al conjunto de suscripciones para una gestión adecuada
+    this.subscriptionsPokemon.add(subscription); // Agrega la suscripción al conjunto de suscripciones para una gestión adecuada
   }
 
   nextPage(): void {

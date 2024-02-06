@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { RoutesService } from './core/services/routes/routes.service';
-import { Allroutes } from './interfaces/allroutes';
+import { Allroutes } from './interfaces/nav-routes';
 
 let allRutes = new RoutesService().getRoutes();
 
