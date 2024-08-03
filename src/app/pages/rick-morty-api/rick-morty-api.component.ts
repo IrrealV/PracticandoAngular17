@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TrackByFunction } from '@angular/core';
 import { RickMortyComponent } from '../../components/rick-morty/rick-morty.component';
 import { ErrorMessageComponent } from '../../components/error-message/error-message.component';
 import { RickMorty, RickMortyResult } from '../../interfaces/rick-morty';
 import { EMPTY, Subscription, catchError, tap } from 'rxjs';
 import { RickMortyService } from '../../core/services/rick-morty/rick-morty.service';
-import { environment } from '../../../environments/environment.development';
+import { environmentRickMorty } from '../../../environments/environment.development';
+import { GameIndex } from '../../interfaces/pokemon';
 
 @Component({
   selector: 'app-rick-morty-api',
@@ -23,7 +24,7 @@ export class RickMortyAPIComponent implements OnInit {
   constructor(private service: RickMortyService) {}
 
   ngOnInit(): void {
-    this.loadRickMorty(environment.rickmortyApiUrlBase);
+    this.loadRickMorty(environmentRickMorty.apiUrlBase);
   }
 
   ngOnDestroy(): void {
@@ -60,4 +61,7 @@ export class RickMortyAPIComponent implements OnInit {
       this.loadRickMorty(this.prevUrl);
     }
   }
+
+  trackByPersjId: TrackByFunction<any> = (index: number, persj: any) =>
+    persj.id;
 }

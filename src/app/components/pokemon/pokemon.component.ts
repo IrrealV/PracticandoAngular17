@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from '../../interfaces/pokemon';
-import { environment } from '../../../environments/environment.development';
+import { environmentPokemon } from '../../../environments/environment.development';
 
 @Component({
   selector: 'app-pokemon',
@@ -11,13 +11,13 @@ import { environment } from '../../../environments/environment.development';
 })
 export class PokemonComponent implements OnInit {
   @Input() pokemonInfo!: Pokemon;
-  urlImagenes: string = environment.pokemonOfficialArtwork;
+  public urlImagen: string = environmentPokemon.officialArtwork;
 
   ngOnInit(): void {
     const identificador: string | null = this.urlNumber(
       this.pokemonInfo.url.toString()
     );
-    this.urlImagenes = this.urlImagenes + identificador + '.png';
+    this.urlImagen = this.urlImagen + identificador + '.png';
   }
 
   capFirstLetter(string: string): string {

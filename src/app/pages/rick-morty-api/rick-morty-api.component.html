@@ -1,9 +1,17 @@
-@defer (on viewport) { @for (persj of rickmortyList; track persj.id) {
-<p>{{ persj.name }}</p>
-} @if (this.nextUrl) {
-<button (click)="nextPage()">Siguiente pagina</button>
-} @if (this.prevUrl) {
-<button (click)="prevPage()">Pagina anterior</button>
-} }@placeholder {
-<section>Descargando personajes...</section>
+@defer (on viewport) {
+  <ul>
+    @for (persj of rickmortyList; track trackByPersjId) {
+      <li>
+        <app-rick-morty [persj]="persj"></app-rick-morty>
+      </li>
+    }
+  </ul>
+  @if (this.nextUrl) {
+    <button (click)="nextPage()">Siguiente pagina</button>
+  }
+  @if (this.prevUrl) {
+    <button (click)="prevPage()">Pagina anterior</button>
+  }
+} @placeholder {
+  <section>Descargando personajes...</section>
 }

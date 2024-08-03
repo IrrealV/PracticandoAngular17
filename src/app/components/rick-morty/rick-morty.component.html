@@ -1,1 +1,13 @@
-<p>rick-morty works!</p>
+@defer (on viewport) {
+  <section>
+    <div class="rickmorty-card">
+      <h2 class="rickmorty-name">
+        {{ persj.name }}
+      </h2>
+      <img src="{{ urlImagen }}" alt="{{ persj.name }}" />
+      <p>Estado: {{ persjStatus }}</p>
+    </div>
+  </section>
+} @placeholder {
+  <p>Cargando Rick & Morty</p>
+}

@@ -6,7 +6,7 @@ let allRutes = new RoutesService().getRoutes();
 
 function convertRoutes(allRoutes: Allroutes[]): Routes {
   return allRoutes.map((route) => ({
-    path: route.path.replace('./', ''), // Remover './' del inicio
+    path: route.path.replace('./', ''),
     component: route.component,
   }));
 }

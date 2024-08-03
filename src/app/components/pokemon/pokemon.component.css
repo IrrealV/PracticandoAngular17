@@ -1,3 +1,27 @@
+/* Tipografía */
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+/* Tipografía */
+
 .pokemon-card {
-  @apply text-black border-cardOutBorder w-64 bg-electric border-8 shadow-xl rounded-xl overflow-hidden;
+  @apply text-black border-cardOutBorder w-64 h-72 bg-electric border-8 shadow-xl rounded-xl relative hover:scale-95;
 }
+
+.pokemon-name {
+  @apply font-pokemon text-yellow-300 tracking-wide text-xl text-shadow-xl;
+  -webkit-text-stroke: 1px black;
+}
+
+.pokemon-image {
+  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-unfocused;
+}
+
+.pokemon-card:hover .pokemon-image {
+  @apply scale-125 drop-shadow-focused;
+}
+
+/* Estilos compartidos */
+.pokemon-card,
+.pokemon-image {
+  @apply transform duration-200 transition;
+}
+/* Estilos compartidos */

@@ -1,5 +1,5 @@
 .pokemon-list {
-  @apply grid 2xl:grid-cols-6 text-center place-items-center list-none gap-5 mt-5;
+  @apply grid 3xl:grid-cols-9 2xl:grid-cols-6 xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 text-center place-items-center list-none gap-5 mt-5;
 }
 
 .pokemon-list li {

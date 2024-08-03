@@ -4,13 +4,13 @@ import { Pokemon, PokemonResults } from '../../interfaces/pokemon';
 import { EMPTY, Subscription, catchError, tap } from 'rxjs';
 import { PokemonComponent } from '../../components/pokemon/pokemon.component';
 import { ErrorMessageComponent } from '../../components/error-message/error-message.component';
-import { environment } from '../../../environments/environment.development';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { environmentPokemon } from '../../../environments/environment.development';
+import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 
 @Component({
   selector: 'app-pokemon-api',
   standalone: true,
-  imports: [PokemonComponent, ErrorMessageComponent, InfiniteScrollModule],
+  imports: [PokemonComponent, ErrorMessageComponent, InfiniteScrollDirective],
   templateUrl: './pokemon-api.component.html',
   styleUrl: './pokemon-api.component.css',
 })
@@ -23,11 +23,11 @@ export class PokemonApiComponent implements OnInit {
   constructor(private service: PokemonService) {}
 
   ngOnInit(): void {
-    this.loadPokemon(environment.pokemonApiUrlBase); // Recibe la url desde el envionment
+    this.loadPokemon(environmentPokemon.apiUrlBase);
   }
 
   ngOnDestroy(): void {
-    this.subscriptionsPokemon.unsubscribe(); // Se desubscribe para evitar fuga en la memoria
+    this.subscriptionsPokemon.unsubscribe();
   }
 
   loadPokemon(url: string): void {
@@ -40,7 +40,7 @@ export class PokemonApiComponent implements OnInit {
         }),
         tap((results: PokemonResults) => {
           this.pokemonList = [...this.pokemonList, ...results.results];
-          this.nextUrl = results.next; // Guarda la próxima URL para la paginación
+          this.nextUrl = results.next;
         })
       )
       .subscribe();
