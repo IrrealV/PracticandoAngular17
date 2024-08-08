@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Allroutes } from '../../../interfaces/nav-routes';
-import { TodoListComponent } from '../../../pages/todo-list/todo-list.component';
-import { RickMortyAPIComponent } from '../../../pages/rick-morty-api/rick-morty-api.component';
-import { TheCatAPIComponent } from '../../../pages/the-cat-api/the-cat-api.component';
-import { HomeComponent } from '../../../pages/home/home.component';
-import { PokemonApiComponent } from '../../../pages/pokemon-api/pokemon-api.component';
+import { TodoListComponent } from '../../../presentation/pages/todo-list/todo-list.component';
+import { RickMortyAPIComponent } from '../../../presentation/pages/rick-morty-api/rick-morty-api.component';
+import { TheCatAPIComponent } from '../../../presentation/pages/the-cat-api/the-cat-api.component';
+import { HomeComponent } from '../../../presentation/pages/home/home.component';
+import { PokemonApiComponent } from '../../../presentation/pages/pokemon-api/pokemon-api.component';
 
 @Injectable({
   providedIn: 'root',

@@ -1,8 +1,8 @@
 // src/app/components/pokemon/fetch-functions.ts
 import { Subscription, EMPTY } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { PokemonService } from '../../core/services/pokemon/pokemon.service';
-import { PokemonSpecies, PokemonData } from '../../interfaces/pokemon';
+import { PokemonService } from '../../../core/services/pokemon/pokemon.service';
+import { PokemonSpecies, PokemonData } from '../../../interfaces/pokemon';
 import { typeTranslations } from './pokemon-types/type-translations';
 
 interface FetchContext {

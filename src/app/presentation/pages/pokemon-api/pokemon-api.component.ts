@@ -1,10 +1,10 @@
 import { Component, OnInit, TrackByFunction } from '@angular/core';
-import { PokemonService } from '../../core/services/pokemon/pokemon.service';
-import { Pokemon, PokemonResults } from '../../interfaces/pokemon';
+import { PokemonService } from '../../../core/services/pokemon/pokemon.service';
+import { Pokemon, PokemonResults } from '../../../interfaces/pokemon';
 import { EMPTY, Subscription, catchError, tap } from 'rxjs';
 import { PokemonComponent } from '../../components/pokemon/pokemon.component';
 import { ErrorMessageComponent } from '../../components/error-message/error-message.component';
-import { environmentPokemon } from '../../../environments/environment.development';
+import { environmentPokemon } from '../../../../environments/environment.development';
 import { InfiniteScrollDirective } from 'ngx-infinite-scroll';
 
 @Component({

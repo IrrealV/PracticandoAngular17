@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 
-import { Allroutes } from '../../../interfaces/nav-routes';
+import { Allroutes } from '../../../../interfaces/nav-routes';
 import { RouterLink } from '@angular/router';
-import { RoutesService } from '../../../core/services/routes/routes.service';
+import { RoutesService } from '../../../../core/services/routes/routes.service';
 
 @Component({
   selector: 'app-navbar',

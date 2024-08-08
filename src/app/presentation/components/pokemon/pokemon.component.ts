@@ -1,10 +1,14 @@
 // src/app/components/pokemon/pokemon.component.ts
 import { Component, Input, OnInit, OnDestroy, Output } from '@angular/core';
-import { Pokemon, PokemonSpecies, PokemonData } from '../../interfaces/pokemon';
+import {
+  Pokemon,
+  PokemonSpecies,
+  PokemonData,
+} from '../../../interfaces/pokemon';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { PokemonService } from '../../core/services/pokemon/pokemon.service';
-import { environmentPokemon } from '../../../environments/environment.development';
+import { PokemonService } from '../../../core/services/pokemon/pokemon.service';
+import { environmentPokemon } from '../../../../environments/environment.development';
 import { fetchPokemonData, capFirstLetter } from './data-functions';
 import { typeColors } from './pokemon-types/type-colors';
 

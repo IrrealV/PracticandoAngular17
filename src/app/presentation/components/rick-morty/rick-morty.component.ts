@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RickMortyResult, Status } from '../../interfaces/rick-morty';
+import { RickMortyResult, Status } from '../../../interfaces/rick-morty';
 
 @Component({
   selector: 'app-rick-morty',

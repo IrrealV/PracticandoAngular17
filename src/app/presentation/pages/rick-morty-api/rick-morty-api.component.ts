@@ -1,11 +1,10 @@
 import { Component, OnInit, TrackByFunction } from '@angular/core';
 import { RickMortyComponent } from '../../components/rick-morty/rick-morty.component';
 import { ErrorMessageComponent } from '../../components/error-message/error-message.component';
-import { RickMorty, RickMortyResult } from '../../interfaces/rick-morty';
+import { RickMorty, RickMortyResult } from '../../../interfaces/rick-morty';
 import { EMPTY, Subscription, catchError, tap } from 'rxjs';
-import { RickMortyService } from '../../core/services/rick-morty/rick-morty.service';
-import { environmentRickMorty } from '../../../environments/environment.development';
-import { GameIndex } from '../../interfaces/pokemon';
+import { RickMortyService } from '../../../core/services/rick-morty/rick-morty.service';
+import { environmentRickMorty } from '../../../../environments/environment.development';
 
 @Component({
   selector: 'app-rick-morty-api',

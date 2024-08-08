@@ -1,5 +1,5 @@
 import { Component, computed, signal, OnInit, effect } from '@angular/core';
-import { FilterType, TodoModel } from '../../interfaces/todo-model';
+import { FilterType, TodoModel } from '../../../interfaces/todo-model';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
