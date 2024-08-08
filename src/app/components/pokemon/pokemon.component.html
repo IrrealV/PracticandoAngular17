@@ -1,16 +1,64 @@
-@defer (on viewport) {
-  <section>
-    <div class="pokemon-card">
+<section class="card">
+  <div class="pokemon-card" (click)="togglePopUp()" [ngClass]="getTypeClass()">
+    <div class="pokemon-header">
+      <h2 class="pokemon-name">{{ capFirstLetter(pokemonInfo.name) }}</h2>
+    </div>
+    <img
+      src="{{ urlImagen }}"
+      alt="{{ capFirstLetter(pokemonInfo.name) }}"
+      class="pokemon-image"
+    />
+  </div>
+</section>
+
+<section class="pop-up" [ngClass]="{ active: showPopUp }">
+  <div
+    class="pokemon-card pop-card grid grid-cols-1"
+    [ngClass]="[animationClass, getTypeClass()]"
+  >
+    <div>
       <div class="pokemon-header">
         <h2 class="pokemon-name">{{ capFirstLetter(pokemonInfo.name) }}</h2>
       </div>
+      <div class="pokemon-case">
+        <h3>Tipos:</h3>
+        <ul class="types-list">
+          @for (type of typesArray; track type) {
+            <li>
+              {{ type }}
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+    <div class="pokemon-about">
       <img
         src="{{ urlImagen }}"
         alt="{{ capFirstLetter(pokemonInfo.name) }}"
         class="pokemon-image"
       />
+      <div class="pokemon-case">
+        <div>
+          <h3>{{ latestDescription }}</h3>
+        </div>
+        <div>
+          <select>
+            <option>asd</option>
+          </select>
+          <select>
+            <option>asd</option>
+          </select>
+          <select>
+            <option>asd</option>
+          </select>
+          <select>
+            <option>asd</option>
+          </select>
+        </div>
+      </div>
     </div>
-  </section>
-} @placeholder {
-  <p>Cargando pokemon</p>
-}
+    <button class="close-button" (click)="closePopup()">X</button>
+  </div>
+</section>
+
+<div></div>

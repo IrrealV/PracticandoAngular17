@@ -2,17 +2,31 @@
 @import url('https://fonts.cdnfonts.com/css/pokemon-solid');
 /* Tipografía */
 
-.pokemon-card {
-  @apply text-black border-cardOutBorder w-64 h-72 bg-electric border-8 shadow-xl rounded-xl relative hover:scale-95;
+/* Maquetación */
+.types-list {
+  @apply flex justify-center place-items-center list-none gap-10 mt-2;
 }
 
-.pokemon-name {
-  @apply font-pokemon text-yellow-300 tracking-wide text-xl text-shadow-xl;
-  -webkit-text-stroke: 1px black;
+.types-list li {
+  @apply text-center;
+}
+/* Maquetación */
+
+.card .pokemon-card {
+  @apply z-0;
+}
+
+.card .pokemon-card:hover {
+  @apply animate-perspectiveZ;
+}
+
+.pokemon-card,
+.pop-card {
+  @apply border-8 shadow-xl rounded-xl w-64 h-72;
 }
 
 .pokemon-image {
-  @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 drop-shadow-unfocused;
+  @apply drop-shadow-unfocused;
 }
 
 .pokemon-card:hover .pokemon-image {
@@ -22,6 +36,65 @@
 /* Estilos compartidos */
 .pokemon-card,
 .pokemon-image {
-  @apply transform duration-200 transition;
+  @apply duration-200;
+}
+
+.pokemon-name,
+.pokemon-case {
+  @apply font-pokemon text-shadow-2xl text-xl tracking-widest text-yellow-300;
+  -webkit-text-stroke: 1.5px black;
 }
 /* Estilos compartidos */
+
+/* PopUp */
+.pop-up {
+  @apply z-10 fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 pointer-events-none transition-opacity duration-500;
+}
+
+.pop-up.active {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.pop-up .pokemon-image {
+  @apply drop-shadow-focused scale-125;
+}
+
+.pop-card {
+  @apply duration-500  border-cardOutBorder;
+}
+
+.pop-up.active .pop-card {
+  @apply w-[80%] h-[80%] scale-100;
+}
+
+.animationPopUp {
+  @apply animate-rotation;
+}
+
+.animationPopDown {
+  @apply animate-reverseRotation;
+}
+
+.pop-up .pokemon-name {
+  @apply text-6xl mt-2 mb-2;
+}
+
+.pop-up .pokemon-case {
+  @apply text-2xl mt-8;
+}
+
+.pokemon-about {
+  @apply grid grid-cols-2 gap-x-20;
+}
+
+.pokemon-about .pokemon-image {
+  @apply justify-self-center w-[80%];
+}
+
+/* PopUp */
+
+/* Botón de cierre */
+.close-button {
+  @apply absolute top-2 right-2 bg-red-500 text-white rounded-full p-2 cursor-pointer;
+}
+/* Botón de cierre */

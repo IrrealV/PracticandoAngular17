@@ -32,7 +32,7 @@ export class PokemonApiComponent implements OnInit {
 
   loadPokemon(url: string): void {
     const subscription = this.service
-      .getPokemonObsevable(url)
+      .getPokemonResults(url)
       .pipe(
         catchError((error) => {
           this.errorMessage = error;
